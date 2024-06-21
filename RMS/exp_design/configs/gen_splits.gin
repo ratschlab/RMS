@@ -1,0 +1,61 @@
+
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # General data table from the original DBMS
+    "general_data_table_path": "/cluster/work/grlab/clinical/hirid2/research/1a_hdf5_clean/v8/static.h5",
+
+    # Included PID base list
+    "pid_included_list": "../../data/exp_design/included_pids_hirid2.tsv",
+
+    # The original K-anonym list from Alizee, required to do the fundamental split into train/test
+    "kanonym_pid_list": "/cluster/work/grlab/clinical/hirid2/physionet_export/preview/testset_123years/pids_list.csv",
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Temporal data split descriptor (binary format) for the Bern data-set v8 on resp project, Final splits.
+    "temporal_data_split_binary_path": "../../data/temp_splits_hirid2.pickle",
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Endpoint for which to generate splits
+    "endpoint": "resp",
+
+    # Debugging mode, no output to file-system
+    "debug_mode": False,
+
+    # Random seed for generation of splits
+    "random_state": 2022,
+
+    # Column to use for pre-defined test split by Alizee
+    "test_set_col": "test_1year",
+
+    # Train/validation split strategy, one of (temporal, random)
+    "train_val_split_strategy": "random",
+
+    # Restrict to patients in the range 2010-2018
+    "restrict_2010_2018": False,
+
+    # Restrict to patients with LOS>1 day
+    "restrict_los_gt_1_day": False,
+
+    # Restrict to a matching random population to LOS >1day
+    "match_los_gt_1_day": False,
+
+    # Train/val ratio in case of random split strategy
+    "temporal_train_ratio": 0.8,
+    "temporal_val_ratio": 0.2,
+
+    # Number of temporal splits to produce
+    "n_temporal_splits": 5,
+
+    # Number of completely random splits to produce
+    "n_random_splits": 5, 
+
+    # Ratios for exploration splits
+    "random_train_ratio": 0.8,
+    "random_val_ratio": 0.1,
+    "random_test_ratio": 0.1
+
+}

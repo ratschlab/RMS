@@ -1,0 +1,16 @@
+figure.dpi : 150
+figure.titlesize : large
+font.size : 6
+axes.labelsize : medium
+axes.spines.top : False
+axes.spines.right : False
+axes.titlesize : 8
+xtick.labelsize : medium
+ytick.labelsize : medium
+legend.edgecolor : white
+legend.fontsize : medium
+pdf.fonttype : 42
+ps.fonttype : 42
+savefig.bbox : tight
+savefig.dpi : 300
+savefig.format : pdf

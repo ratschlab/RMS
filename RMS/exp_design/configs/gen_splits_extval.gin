@@ -1,0 +1,47 @@
+
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # General data table from the original DBMS
+    "general_data_table_path": "/cluster/work/grlab/clinical/umcdb/parquet/admissions.parquet",
+
+    # Included PID base list (Amsterdam UMCDB database)
+    "pid_included_list": "../../data/exp_design/included_pids_umcdb.tsv", 
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Split descriptor path
+    "temporal_data_split_binary_path": "../../data/exp_design/random_splits_umcdb.pickle",
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Endpoint for which to generate splits
+    "endpoint": "resp_extval",
+
+    # Debugging mode, no output to file-system
+    "debug_mode": False,
+
+    # Random seed for generation of splits
+    "random_state": 2023,
+
+    # Train/validation set strategy, one of (temporal, random)
+    "train_val_split_strategy": "random",
+
+    # Restrict to patients in the range 2010-2018
+    "restrict_2010_2018": False,
+
+    # Restrict to patients with LOS>1 day
+    "restrict_los_gt_1_day": False,    
+
+    # Restrict to a matching random population to LOS >1day
+    "match_los_gt_1_day": False,
+
+    # Number of random splits to produce
+    "n_random_splits": 5,
+
+    # Val ratio for random splits
+    "random_train_ratio": 0.8,
+    "random_val_ratio": 0.2,
+
+}

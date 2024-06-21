@@ -1,0 +1,92 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # ML input directory for the Bern data-set
+    "ml_input_dir": "../../data/ml_input/hirid2_features",
+
+    # Imputed data directory
+    "imputed_dir": "../../data/imputed/noimpute_hirid2",
+
+    # Batch map for data-set
+    "pid_batch_map_path": "../../data/exp_design/hirid2_chunking_100.pickle",
+
+    # Temporal split descriptor
+    "temporal_data_split_path": "../../data/exp_design/temp_splits_hirid2.pickle",
+
+    # Variable encoding directory
+    "varencoding_dict_path": "../../data/misc/meta_varencoding_map_v8.pickle",
+
+    # General data table for Bern database
+    "static_data_bern": "../../data/raw_data/hirid2/static.h5",
+
+    # List of variables to use in case variable set is restricted
+    "var_restrict_path": None,
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Output directory to store the H5PY data-sets
+    "output_dir": "../../data/ml_dset/hirid2_dset",
+
+    # Logging dir
+    "log_dir": "/cluster/home/mhueser/log_files/icu_score_resp",
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Split to process
+    "split_key": "temporal_1",
+
+    # Debugging options
+    "debug_mode": False,
+
+    # Write buffer size (how many patients should be written to the file together?)
+    "write_buffer_size": 1000,
+
+    # Endpoint to process
+    "endpoint": "resp",
+
+    # Restrict train/val set to a particular year, if not None
+    "restrict_year": None,
+
+    # Subsample train/validation pid to the size of the smallest year to make it comparable
+    "restrict_year_train_ss": None, #2408,
+    "restrict_year_val_ss": None, #270,
+
+    # PRNG seed
+    "random_state": 2022,
+
+    # Gender numeric encode
+    "gender_numeric_encode": True,
+
+    # Unify X/y grid
+    "unify_X_y_grid": True,
+
+    # Database to process (hirid or umcdb)
+    "database": "hirid",
+
+    # Variable restriction
+    "restrict_variables": False,
+
+    # Execution mode
+    "run_mode": "INTERACTIVE",
+
+    # Profiling settings
+    "profile_report": False,
+    "systrace_mode": False,
+
+    # Subsampling settings
+    "10percent_sample": False,
+    "0.1percent_sample_train": False,
+    "1percent_sample_train": False,
+    "5percent_sample_train": False,
+    "10percent_sample_train": False,
+    "20percent_sample_train": False,
+    "50percent_sample_train": False,
+    "1percent_sample_val": False,
+    "1percent_sample": False,
+    "verysmall_sample": False,
+
+    # Downsample the train set to the size of UMCDB (4019 patients)
+    "same_size_umcdb_sample_train": False
+
+}

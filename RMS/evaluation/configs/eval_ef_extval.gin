@@ -1,0 +1,57 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Predictions base directory
+    "bern_predictions_dir": "../../data/predictions",
+
+    # PID batch map
+    "hirid_pid_map_path": "../../data/exp_design/hirid2_chunking_100.pickle",
+    "umc_pid_map_path": "../../data/exp_design/umcdb_chunking.pickle", # OLD DATA-SET
+
+    # Temporal split descriptor
+    "bern_temporal_split_path": "../../data/exp_design/temp_splits_hirid2.pickle",
+    "umc_temporal_split_path": "../../data/exp_design/random_splits_umcdb.pickle", 
+
+    # Endpoint path
+    "endpoint_path": "../../data/endpoints/hirid2_endpoints", # Only used for custom score methods
+
+    # ================= OUTPUT PATHS ======================================================================================================    
+
+    # Directory to store results and raw data of plots
+    "eval_table_dir": "../../data/evaluation/time_point_based/eval_ef_extval",
+    
+    # ================= ARGUMENTS ======================================================================================================
+
+    # List of tasks / configurations to evaluate
+    "task_keys": [("Label_ExtubationFailureSimple_internal_rmsEF_lightgbm",None,"hirid",False,None),
+                  ("Label_ExtubationFailureSimple_val_rmsEF_lightgbm",None,"umcdb",True,None),
+                  ("Label_ExtubationFailureSimple_retrain_rmsEF_lightgbm",None,"umcdb",True,None)],
+    
+    "eval_splits": [("temporal_1","random_1"),
+                    ("temporal_2","random_2"),
+                    ("temporal_3","random_3"),
+                    ("temporal_4","random_4"),                    
+                    ("temporal_5","random_5")],
+
+    # Debugging options
+    "verbose": False,
+    "debug_mode": False,
+
+    # Custom ROC PR curves, should be used for Extubation failure
+    "custom_roc_pr_curves": True,
+
+    "internal_mode": False,
+
+    # Evaluation using confusion matrix
+    "conf_matrix_eval": False,
+
+    # Invert scores
+    "invert_scores": False,
+
+    # Restrict evaluation to an hour in the stay.
+    "restrict_tis_hours": None,
+
+    "autosense_eval_hour": False,
+
+}

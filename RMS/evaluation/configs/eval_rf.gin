@@ -1,0 +1,61 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Predictions base directory
+    "bern_predictions_dir": "../../data/predictions",
+
+    # PID batch map
+    "hirid_pid_map_path": "../../data/exp_design/hirid2_chunking_100.pickle",
+
+    # Temporal split descriptor
+    "bern_temporal_split_path": "../../data/exp_design/temp_splits_hirid2.pickle",
+
+    # Endpoint path
+    "endpoint_path": "../../data/endpoints/hirid2_endpoints", # Only used for custom score methods
+
+    # Auxiliary prediction path (SpO2/FiO2 ratio)
+    "imputed_path": "../../data/imputed/impute_hirid2", # Load the SpO2/FiO2 ratio baseline predictions
+
+    # ================= OUTPUT PATHS ======================================================================================================    
+
+    # Directory to store results and raw data of plots
+    "eval_table_dir": "../../data/evaluation/time_point_based/eval_rf_internal",
+    
+    # ================= ARGUMENTS ======================================================================================================
+
+    # List of tasks / configurations to evaluate
+    
+    # Respiratory failure
+    "task_keys": [("Label_WorseStateFromZeroOrOne0To24Hours_one_minus_spo2_fio2_ratio",None,"hirid",False,None),       
+                  ("Label_WorseStateFromZeroOrOne0To24Hours_internal_rmsRF_lightgbm",None,"hirid",False,None), 
+                  ("Label_WorseStateFromZeroOrOne0To24Hours_clinical_baseline_tree",None,"hirid",False,None)],
+    
+    "eval_splits": [("temporal_1","random_1"),
+                    ("temporal_2","random_1"),
+                    ("temporal_3","random_1"),
+                    ("temporal_4","random_1"),                    
+                    ("temporal_5","random_1")], 
+    
+    # Debugging options
+    "verbose": False,
+    "debug_mode": False,
+
+    # Custom ROC PR curves, should be used for Extubation failure
+    "custom_roc_pr_curves": False,
+
+    # Evaluation using confusion matrix
+    "conf_matrix_eval": False,
+
+    # Invert scores
+    "invert_scores": False,
+
+    # Internal evaluation
+    "internal_mode": True,    
+
+    # Restrict evaluation to an hour in the stay.
+    "restrict_tis_hours": None,
+
+    "autosense_eval_hour": False
+
+}

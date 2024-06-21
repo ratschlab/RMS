@@ -1,0 +1,30 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Merged data stage
+    "merged_path": "/cluster/work/grlab/clinical/hirid2/research/3_merged/v8/reduced_rm_drugoor",
+
+    # PID list from the anonymization procedure
+    "kanonym_pid_list": "/cluster/work/grlab/clinical/hirid2/physionet_export/preview/testset_123years/pids_list.csv",
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Location to store list with included PIDs
+    "inc_pid_list": "/cluster/work/grlab/clinical/hirid2/research/misc_derived/RESP_project/included_pids_kanonym_test_1year.tsv",
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Debugging, use only 1 batch
+    "debug_mode": False,
+
+    # K-anonym col to use
+    "kanonym_col": "test_1year",
+    
+    # Endpoint to process
+    "endpoint": "resp",
+
+    # Should we intersect with k-anonymity PID list?
+    "restrict_k_anonym": True
+
+}

@@ -1,0 +1,80 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # ML input directory for the Bern data-set
+    #"ml_input_dir": "../../data/ml_input/umcdb_features",
+    "ml_input_dir": "../../data/ml_input/umcdb_features_OLD",     # OLD DATA-SET
+
+    # Imputed data directory
+    #"imputed_dir": "../../data/imputed/noimpute_umcdb",
+    "imputed_dir": "../../data/imputed/noimpute_umcdb_OLD",  # OLD DATA-SET
+
+    # Batch map for data-set
+    #"pid_batch_map_path": "../../data/exp_design/umcdb_chunking_ALL.pickle",
+    "pid_batch_map_path": "../../data/exp_design/umcdb_chunking.pickle",     # OLD DATA-SET
+
+    # Temporal split descriptor
+    "temporal_data_split_path": "../../data/exp_design/random_splits_umcdb.pickle",
+
+    # List of variables to use in case variable set is restricted
+    "var_restrict_path": None,
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Output directory to store the H5PY data-sets
+    #"output_dir": "../../data/ml_dset/umcdb_dset",    
+    "output_dir": "../../data/ml_dset/umcdb_dset_OLD", # OLD DATA-SET
+
+    # Logging dir
+    "log_dir": "/cluster/home/mhueser/log_files/icu_score_resp",
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Split to process
+    "split_key": "random_1",
+
+    # Debugging options
+    "debug_mode": False,
+
+    # Write buffer size (how many patients should be written to the file together?)
+    "write_buffer_size": 1000,
+
+    # Endpoint to process
+    "endpoint": "resp_extval",
+
+    # Gender numeric encode
+    "gender_numeric_encode": True,
+
+    # Unify X/y grid
+    "unify_X_y_grid": True,
+
+    # PRNG seed
+    "random_state": 2022,
+
+    # Variable restriction
+    "restrict_variables": False,
+
+    # Execution mode
+    "run_mode": "INTERACTIVE",
+
+    # Profiling settings
+    "profile_report": False,
+    "systrace_mode": False,
+
+    # Database to process (hirid OR umcdb)
+    "database": "umcdb",
+
+    # Subsampling settings
+    "10percent_sample": False,
+    "0.1percent_sample_train": False,
+    "1percent_sample_train": False,
+    "5percent_sample_train": False,
+    "10percent_sample_train": False,
+    "20percent_sample_train": False,
+    "50percent_sample_train": False,
+    "1percent_sample_val": False,
+    "1percent_sample": False,
+    "verysmall_sample": False
+
+}

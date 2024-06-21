@@ -1,0 +1,69 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Script to dispatch
+    "compute_script_path": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/learning/learning_serial.py",
+
+    # GIN base config file of script
+    "script_gin_file": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/learning/configs/learning_ef_50pct.gin",
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Predictions directory
+    "pred_dir": "../../data/predictions",
+
+    # Logging dir
+    "log_dir": "/cluster/home/mhueser/log_files/icu_score_resp",
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Splits to process
+    "SPLIT_CONFIGS": [("temporal_1","random_1"),
+                      ("temporal_2","random_1"),
+                      ("temporal_3","random_1"),
+                      ("temporal_4","random_1"),                                
+                      ("temporal_5","random_1")],
+
+    # Tasks to process
+
+    # Low-resource set of tasks (full hyperparameter grid)
+    "ALL_TASKS": [("Label_ExtubationFailureSimple",None)], 
+
+    # Resources to request
+    "mbytes_per_job": 128000, # (low sample tasks)
+    
+    "hours_per_job": 24,
+    
+    "num_cpu_cores": 1,
+
+    # Debugging settings
+    "dry_run": False,
+    "debug_mode": False,
+    "random_seed": 2023,
+    "preserve_logs": True,
+
+    # Sub-sampling of training data
+    "1percent_sample": False,
+
+    # Machine learning model
+    "ml_model": "lightgbm",
+    #"ml_model": "tree",      # Clinical baseline
+
+    # Special modes
+    "use_catboost": False,
+    "decision_tree_baseline": False,
+    "decision_tree_mode": False,
+    "logreg_mode": False,
+    "mlp_mode": False,
+
+    # Bad hosts
+    "bad_hosts": [],
+
+    # Feature selection
+    "col_desc": "rmsEF_50pct_train",
+    
+    # Hyperparameter search
+    "hp_grid_size": 20,
+
+}

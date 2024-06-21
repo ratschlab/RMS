@@ -1,0 +1,46 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS =======================================================================================================
+
+    # Script to dispatch
+    "compute_script_path": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/endpoints/endpoint_gen.py",
+
+    # Base gin config of script
+    "base_gin_config": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/endpoints/configs/ep.gin", 
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Logging dir
+    "log_dir": "/cluster/home/mhueser/log_files/icu_score_resp",
+
+    # ================= ARGUMENTS =========================================================================================================
+
+    # Resource requests
+    "compute_n_hours": 4,
+    "compute_n_cores": 1,
+    "compute_mem": 20000,
+
+    # If reliability analysis, dispatch the same endpoint config with different random seeds
+    "reliability_analysis": False,
+
+    # Debugging options
+    "dry_run": False,
+    "debug_mode": False,
+    "preserve_logs": True,
+
+    # Default random state to dispatch jobs with
+    "random_state": 2022,
+
+    # Endpoint to process
+    "endpoint": "resp",
+
+    # Batches to dispatch
+    "max_batch_idx": 100,
+    
+    # Splits to dispatch
+    "SPLITS": ["temporal_2","temporal_3","temporal_4","temporal_5"],
+
+    # Random states to dispatch for reliability analysis
+    "RANDOM_STATES_REL": [0,1,2,3,4,5,6,7,8,9]
+
+}

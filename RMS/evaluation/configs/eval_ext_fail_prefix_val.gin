@@ -1,0 +1,78 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Predictions base directory
+    "bern_predictions_dir": "../../data/predictions",
+
+    # PID batch map
+    "hirid_pid_map_path": "../../data/exp_design/hirid2_chunking_100.pickle",
+    "umc_pid_map_path": "../../data/exp_design/umcdb_chunking.pickle",
+
+    # Temporal split descriptor
+    "bern_temporal_split_path": "../../data/exp_design/temp_splits_hirid2.pickle",
+    "umc_temporal_split_path": "../../data/exp_design/random_splits_umcdb.pickle", 
+
+    # Endpoint path
+    "endpoint_path": "../../data/endpoints/hirid2_endpoints", # Only used for custom score methods
+
+    # ================= OUTPUT PATHS ======================================================================================================    
+
+    # Directory to store results and raw data of plots
+    "eval_table_dir": "../../data/evaluation/time_point_based/eval_fail_prefix_model_val",
+    
+    # ================= ARGUMENTS ======================================================================================================
+
+    # List of tasks / configurations to evaluate
+
+    "task_keys":[("Label_ExtubationFailureSimple_internal_compact_lightgbm",None,"hirid",False),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_1var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_2var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_3var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_4var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_5var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_6var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_7var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_8var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_9var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_10var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_11var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_12var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_13var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_14var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_15var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_16var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_17var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_18var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_19var_prefix_lightgbm",None,"umcdb",True),
+                 ("Label_ExtubationFailureSimple_val_compact_UMCDB_20var_prefix_lightgbm",None,"umcdb",True)],
+
+    "eval_splits": [("temporal_1","random_1"),
+                    ("temporal_2","random_1"),
+                    ("temporal_3","random_1"),
+                    ("temporal_4","random_1"),                    
+                    ("temporal_5","random_1")], 
+    
+    # Debugging options
+    "verbose": False,
+    "debug_mode": False,
+
+    # Custom ROC PR curves, should be used for Extubation failure
+    #"custom_roc_pr_curves": False,
+    "custom_roc_pr_curves": True,  
+
+    # Evaluation using confusion matrix
+    "conf_matrix_eval": False,
+
+    # Internal evaluation
+    "internal_mode": True,
+
+    # Invert scores
+    "invert_scores": False,
+
+    # Restrict evaluation to an hour in the stay.
+    "restrict_tis_hours": None,
+
+    "autosense_eval_hour": False
+
+}

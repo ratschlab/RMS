@@ -1,0 +1,21 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Merged data stage
+    "merged_path": "/cluster/work/grlab/clinical/umcdb/preprocessed/merged/2023-04-23_rm_drugoor",
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Location to store list with included PIDs
+    "inc_pid_list": "../../data/exp_design/included_pids_umcdb_ALL.tsv",
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Debugging, use only 1 batch
+    "debug_mode": False,
+    
+    # Endpoint to process
+    "endpoint": "resp_extval",
+
+}

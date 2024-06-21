@@ -1,0 +1,33 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Script to dispatch
+    "compute_script_path": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/imputation/save_imputation_params.py",
+
+    # Config file of script
+    "script_gin_file": "/cluster/home/mhueser/git/projects/2022/RMS/imputation/configs/impute_save_parameters.gin",
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Logging dir
+    "log_dir": "/cluster/home/mhueser/log_files/icu_score_resp",
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Memory to request
+    "mem_in_mbytes": 8000,
+
+    # Cores to request
+    "n_cpu_cores": 1,
+
+    # Compute time to request
+    "n_compute_hours": 24,
+
+    # Debugging
+    "dry_run": False,
+
+    # Splits to dispatch
+    "split_configs": ["temporal_1"]
+
+}

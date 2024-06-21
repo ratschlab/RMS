@@ -1,0 +1,72 @@
+
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Splits of the data
+    "temporal_data_split_binary": "../../data/exp_design/temp_splits_hirid2.pickle",
+
+    # Binary chunking maps
+    "pid_batch_map_binary": "../../data/exp_design/hirid2_chunking_100.pickle",
+
+    # Imputed dir
+    "imputed_dir": "../../data/imputed/impute_hirid2",
+    
+    # Endpoint dir
+    "endpoint_dir": "../../data/endpoints/hirid2_endpoints",
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Output location for respiratory failure labels
+    "label_dir": "../../data/labels/hirid2_labels",
+
+    # Logging dir
+    "log_dir": "/cluster/home/mhueser/log_files/icu_score_resp",
+    
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Should the code be run in cluster mode?
+    "run_mode": "INTERACTIVE",
+
+    # Split for which to produce labels
+    "split_key": "temporal_1",
+
+    # On which endpoint to generate labels?
+    "endpoint": "resp",
+
+    # Which label set to create?
+    "label_key": "AllLabels",
+
+    # For which prediction horizons shall labels be generated
+    "pred_horizons": [(0,2),(0,4),(0,8),(0,12),(0,16),(0,24),(0,32),(4,8),(4,12),(8,12),(8,16),(16,24)],
+
+    # Sample augmentation for extubation failure
+    "ext_failure_sample_augment": True,
+    "ext_failure_sample_augment_mins": 60,
+
+    # Verbose
+    "verbose": True,
+
+    # Grid information
+    "grid_step_seconds": 300.0,
+
+    # Batch index to process
+    "batch_idx": 50,
+
+    # Label data-set ID
+    "label_dset_id": "data",
+
+    # HDF compression options
+    "hdf_comp_level": 5,
+    "hdf_comp_alg": "blosc:lz4",
+    
+    # Debugging
+    "debug_mode": False,
+
+    # Data-frame keys
+    "abs_datetime_key": "AbsDatetime",
+    "rel_datetime_key": "RelDatetime",
+    "patient_id_key": "PatientID"
+
+}
+    

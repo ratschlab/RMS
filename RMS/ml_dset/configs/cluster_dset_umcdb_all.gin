@@ -1,0 +1,53 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Script to dispatch
+    "compute_script_path": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/ml_dset/prepare_dset.py",
+
+    # GIN config of base script
+    "base_gin_config": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/ml_dset/configs/save_dset_umcdb_all.gin",
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Data-set output dir
+    #"dset_dir": "../../data/ml_dset/umcdb_dset",
+    "dset_dir": "../../data/ml_dset/umcdb_dset_OLD",     # OLD DATA-SET
+    
+    # Logging dir
+    "log_dir": "/cluster/home/mhueser/log_files/icu_score_resp",
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Splits to process
+    "SPLIT_CONFIGS": ["random_1","random_2","random_3","random_4","random_5"],
+
+    # Endpoint to process
+    "endpoint": "resp_extval",
+
+    # Memory to request
+    "mbytes_per_job": 128000,
+
+    # CPU hours to request
+    "hours_per_job": 4,
+    
+    # Number of cores to request
+    "num_cpu_cores": 1,
+
+    # Debugging options
+    "dry_run": False,
+    "debug_mode": False,
+    "preserve_logs": True,
+
+    # Random seed
+    "random_seed": 2022,
+
+    # Negative sub-sampling of data
+    "negative_subsampling": False,
+
+    # Options for special development split
+    "special_development_split": "NONE",
+    "special_year": None
+
+}
+ 

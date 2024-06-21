@@ -1,0 +1,47 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Script to dispatch
+    "compute_script_path": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/ml_input/save_ml_input.py",
+    
+    # Base GIN config
+    "base_gin_config": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/ml_input/configs/save_ml_input_extval.gin",
+
+    # ================= OUTPUT PATHS ======================================================================================================
+    
+    # Feature output directory
+    #"features_dir": "../../data/ml_input/umcdb_features",
+    "features_dir": "../../data/ml_input/umcdb_features_OLD",     # OLD DATA-SET
+
+    # Logging directory
+    "log_dir": "/cluster/home/mhueser/log_files/icu_score_resp",
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Endpoint to use
+    "endpoint": "resp_extval",
+
+    # Memory to request per job
+    "mbytes_per_job": 40000,
+
+    # Compute time to request per job
+    "hours_per_job": 10,
+
+    # Debugging options
+    "dry_run": False,
+    "debug_mode": False,
+    "preserve_logs": True,
+
+    # Are NAN values expected in input?
+    "missing_values_mode": "finite",
+
+    # Splits to dispatch
+    "SPLIT_SCHEMAS": ["random_1","random_2","random_3","random_4","random_5"],
+
+    # Maximum batch to dispatch
+    #"BATCH_RANGE": 48,
+    "BATCH_RANGE": 24    # OLD DATA-SET
+
+}
+

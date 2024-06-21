@@ -1,0 +1,38 @@
+
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Temporal split descriptor
+    "temporal_data_split_binary_path": "../../data/exp_design/random_splits_umcdb.pickle",
+
+    # Static information
+    "static_info_path": "../../data/raw_data/umcdb/admissions.parquet",
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Output directory for imputed data
+    #"imputed_reduced_path": "../../data/imputed/noimpute_umcdb/reduced",
+    "imputed_reduced_path": "../../data/imputed/noimpute_umcdb_OLD/reduced",     # OLD DATA-SET
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # HDF compression options
+    "hdf_comp_level": 5,
+    "hdf_comp_alg": "blosc:lz4",
+
+    # Do not use imputation, leave NAN in the frame
+    "no_impute": True,
+
+    # Debugging options
+    "debug_mode": False,
+
+    # Database to process in ["hirid","umcdb"]
+    "database": "umcdb",
+
+    "SPLIT_MODES": ["random_1","random_2","random_3","random_4","random_5"],
+
+    # Variables to select from static variables
+    "vars_select": ["patientid","urgency","gender","agegroup","heightgroup"],
+
+}

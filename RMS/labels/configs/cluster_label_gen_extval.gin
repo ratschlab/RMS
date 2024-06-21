@@ -1,0 +1,49 @@
+
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Script to dispatch
+    "compute_script_path": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/labels/label_gen.py",
+
+    # Gin config of script
+    "script_gin_config": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/labels/configs/label_gen_extval.gin",
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Logging dir
+    "log_dir": "/cluster/home/mhueser/log_files/icu_score_resp",
+
+    # Label directory
+    #"label_dir": "../../data/labels/umcdb_labels",
+    "label_dir": "../../data/labels/umcdb_labels_OLD",     # OLD DATA-SET
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Number of compute hours to dispatch
+    "compute_n_hours": 4,
+
+    # Number of compute cores
+    "compute_n_cores": 1, 
+
+    # Mem limit
+    "compute_mem": 4000,
+
+    # Debugging
+    "dry_run": False,
+    "debug_mode": False,
+    
+    # Logging
+    "preserve_logs": True,
+
+    # Endpoint selection
+    "endpoint": "resp_extval",
+
+    # Splits for which to generate labels
+    "SPLIT_MODES": ["random_1","random_2","random_3","random_4","random_5"],
+
+    # Maximum batch to process
+    #"BATCHES": 48,
+    "BATCHES": 24   # OLD DATA-SET
+
+}

@@ -1,0 +1,45 @@
+parse_gin_args.gin_configs = {
+
+    # ================= INPUT PATHS ======================================================================================================
+
+    # Script to dispatch
+    "compute_script_path": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/imputation/impute_one_batch.py",
+    "gin_config_path": "/cluster/home/mhueser/git/projects/2022/respews_public/RMS/imputation/configs/impute_dynamic_extval_noimpute.gin",
+
+    # ================= OUTPUT PATHS ======================================================================================================
+
+    # Logging directory
+    "log_dir": "/cluster/home/mhueser/log_files/icu_score_resp",
+
+    # Output dir for imputed data
+    #"bern_imputed_reduced_dir": "../../data/imputed/noimpute_umcdb/reduced", 
+    "bern_imputed_reduced_dir": "../../data/imputed/noimpute_umcdb_OLD/reduced",     # OLD DATA-SET
+
+    # ================= ARGUMENTS ======================================================================================================
+
+    # Memory to request
+    "mem_in_mbytes": 5000,
+
+    # CPU cores to request
+    "n_cpu_cores": 1,
+
+    # Compute time to request
+    "n_compute_hours": 4,
+
+    # Debugging options
+    "dry_run": False,
+
+    # Data-set to process
+    "dataset": "umcdb",
+
+    # Maximum batch idx to dispatch
+    #"max_batch_idx": 48,
+    "max_batch_idx": 24,     # OLD DATA-SET
+
+    # Imputation strategy
+    "imputation_mode": "forward_filling",
+
+    # Splits to dispatch
+    "split_configs": ["random_1","random_2","random_3","random_4","random_5"]
+
+}
